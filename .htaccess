@@ -1,0 +1,6 @@
+# per configurare la riscrittura delle URL utilizzando il modulo mod_rewrite di Apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>
