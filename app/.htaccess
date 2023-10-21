@@ -1,0 +1,3 @@
+# per nascondere visualizzazione dell'elenco dei file della directory quando il browser accede alla directory
+Options -Indexes
+
