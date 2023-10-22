@@ -13,6 +13,9 @@
         public function __construct() {
             $this->getUrl();
             $this->getController();
+            $this->getMethod();
+            $this->getParams();
+            $this->invokeControllerMethod();
         }
 
         // Extracts, sanitizes and splits the URL into an array if the 'url' parameter is set in the request
@@ -33,5 +36,21 @@
 
             require_once '../app/controllers/' . $this->currentController . '.php';
             $this->currentController = new $this->currentController;
+        }
+
+        public function getMethod() {
+            if(isset($this->url[1]) && method_exists($this->currentController, $this->url[1])) {
+                $this->currentMethod = $this->url[1];
+                unset($this->url[1]);
+            }
+        }
+
+        public function getParams() {
+            $this->params = $this->url ? array_values($this->url) : [];
+        }
+
+        // this method invoke the method of controller passing params
+        public function invokeControllerMethod() {
+            call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
         }
     }

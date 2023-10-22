@@ -3,6 +3,9 @@
     class Pages
     {
         public function __construct() {
-            echo 'pages';
+        }
+
+        public function test($id) {
+            echo 'metodo funziona ' . $id;
         }
     }
