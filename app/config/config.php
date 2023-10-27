@@ -1,10 +1,10 @@
 <?php
     // DB params
     define('DB_HOST', 'localhost');
-    define('DB_USER', 'myMvc');
-    define('DB_PASS', 'myMvc123');
-    define('DB_NAME', 'mymvc');
+    define('DB_USER', '_YOUR_USER_');
+    define('DB_PASS', '_YOUR_PASS_');
+    define('DB_NAME', '_YOUR_DB_NAME_');
 
     define('APPROOT', dirname(dirname(__FILE__)));
-    define('URLROOT', 'http://localhost:8888/my_mvc');
-    define('SITENAME', 'MY MVC');
+    define('URLROOT', '_YOUR_URL_');
+    define('SITENAME', '_YOUR_SITE_NAME_');
